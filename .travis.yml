@@ -4,7 +4,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t krishnadwypayan/docker-basic -f Dockerfile.dev .
+  - docker build -t krishnakotadocker/docker-basic -f Dockerfile.dev .
 
 script:
-  - docker run krishnadwypayan/docker-basic npm run test -- --coverage
+  - docker run -e CI=true krishnakotadocker/docker-basic npm run test
